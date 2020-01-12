@@ -1,0 +1,119 @@
+<!-- Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation. -->
+<ion-header>
+  <ion-navbar color="primary" text-center>
+    <ion-title>SenWallet</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col class="solde">
+              <ion-title text-center color="primary">
+                <h3>Solde Actuel</h3>
+                {{account.solde}} FCFA
+              </ion-title>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+            <ion-row class="option-item" (click)="goToBarrecode()">
+                <ion-col col-2>
+                  <ion-icon class="option-icon" color="primary" name="barcode"></ion-icon>
+                </ion-col>
+                <ion-col col-9>
+                  Mon code barre
+                </ion-col>
+                <ion-col col-1>
+                  <ion-icon color="primary" name="arrow-dropright"></ion-icon>
+                </ion-col>
+              </ion-row>
+          <ion-row class="option-item" (click)="goToTransfertIndex()">
+            <ion-col col-2>
+              <ion-icon class="option-icon" color="primary" name="share"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+              Mes transferts
+            </ion-col>
+            <ion-col col-1>
+              <ion-icon color="primary" name="arrow-dropright"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row class="option-item" (click)="goToCodeRechargeIndex()">
+              <ion-col col-2>
+                <ion-icon class="option-icon" color="primary" name="card"></ion-icon>
+              </ion-col>
+              <ion-col col-9>
+                Codes de recharge
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon color="primary" name="arrow-dropright"></ion-icon>
+              </ion-col>
+            </ion-row>
+          <ion-row class="option-item" (click)="goToDepotIndex()">
+              <ion-col col-2>
+                <ion-icon class="option-icon" color="primary" name="boat"></ion-icon>
+              </ion-col>
+              <ion-col col-9>
+                Mes dépots
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon color="primary" name="arrow-dropright"></ion-icon>
+              </ion-col>
+            </ion-row>
+          <ion-row class="option-item" (click)="goToRetraitIndex()">
+              <ion-col col-2>
+                <ion-icon class="option-icon" color="primary" name="briefcase"></ion-icon>
+              </ion-col>
+              <ion-col col-9>
+                Mes retraits
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon color="primary" name="arrow-dropright"></ion-icon>
+              </ion-col>
+            </ion-row>
+          <ion-row class="option-item" (click)="goToDistributionIndex()">
+              <ion-col col-2>
+                <ion-icon class="option-icon" color="primary" name="contract"></ion-icon>
+              </ion-col>
+              <ion-col col-9>
+                Mes distributions
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon color="primary" name="arrow-dropright"></ion-icon>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+  <!-- </div> -->
+
+  <ion-fab right bottom>
+    <button ion-fab color="primary">
+      <ion-icon name="arrow-dropleft"></ion-icon>
+    </button>
+    <ion-fab-list side="left">
+      <button ion-fab color="primary">
+        <ion-icon name="person"></ion-icon>
+      </button>
+      <button ion-fab color="primary">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+      <button ion-fab (click)="logout()" color="primary">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+</ion-content>

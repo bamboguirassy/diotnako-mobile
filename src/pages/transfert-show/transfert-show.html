@@ -1,0 +1,56 @@
+<!--
+  Generated template for the TransfertShowPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Détails Transfert</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card color="primary" class="transfert-card">
+    <ion-card-header>
+      <ion-card-title>Ref. {{ transfert.numeroTransaction }}</ion-card-title>
+      <span ion-card-subtitle>
+       {{ transfert.date | date: "le dd/MM/yyyy à hh:mm:ss" }}
+      </span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col><b>Date Confirmation: </b></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{transfert.dateConfirmation|date:'le dd/MM/yyyy à hh:mm:ss'}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6"><b>Montant:</b></ion-col>
+          <ion-col size="6">{{transfert.montant}} FCFA</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6"><b>Frais:</b></ion-col>
+          <ion-col size="6">{{transfert.fraisDiotnako}} FCFA</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6"><b>Total:</b></ion-col>
+          <ion-col size="6">{{transfert.fraisDiotnako+transfert.montant}} FCFA</ion-col>
+        </ion-row>
+      </ion-grid>
+      <p ion-text>
+        <span><b>Destinataire: </b></span>
+        <span>
+          {{
+            transfert.compteDestination.fosUser.prenom +
+            " " +
+            transfert.compteDestination.fosUser.nom
+          }}
+        </span><br>
+        <span><b>Téléphone: </b></span>
+        <span>{{transfert.compteDestination.telephone}}</span><br />
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

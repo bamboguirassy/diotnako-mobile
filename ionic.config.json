@@ -1,0 +1,7 @@
+{
+  "name": "diotnako",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

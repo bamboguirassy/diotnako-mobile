@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ "SIGNUP_TITLE" | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="primary" class="signup-card">
+    <ion-card-header text-center>
+      <ion-card-title>Compte SenWallet</ion-card-title>
+      <span ion-card-subtitle
+        >Merci de renseigner <br> les informations 
+        pour la <br> création de votre compte.</span
+      >
+    </ion-card-header>
+    <ion-card-content>
+      <form (submit)="doSignup()">
+        <ion-list class="signup-form">
+          <ion-item color="primary">
+            <ion-label stacked>Prénom</ion-label>
+            <ion-input class="form-control"
+              type="text"
+              [(ngModel)]="account.prenom"
+              name="prenom"
+            ></ion-input>
+          </ion-item>
+          <ion-item color="primary">
+            <ion-label stacked>Nom</ion-label>
+            <ion-input class="form-control"
+              type="text"
+              [(ngModel)]="account.nom"
+              name="nom"
+            ></ion-input>
+          </ion-item>
+          <ion-item color="primary">
+            <ion-label stacked>{{ "EMAIL" | translate }}</ion-label>
+            <ion-input class="form-control"
+              type="email"
+              [(ngModel)]="account.email"
+              name="email"
+            ></ion-input>
+          </ion-item>
+          <ion-item color="primary">
+            <ion-label stacked>Username</ion-label>
+            <ion-input class="form-control"
+              type="text"
+              [(ngModel)]="account.username"
+              name="username"
+            ></ion-input>
+          </ion-item>
+          <ion-item color="primary">
+            <ion-label stacked>{{ "PASSWORD" | translate }}</ion-label>
+            <ion-input class="form-control"
+              type="password"
+              [(ngModel)]="account.plainPassword"
+              name="password"
+            ></ion-input>
+          </ion-item>
+          <ion-item color="primary">
+            <ion-label stacked>Confirmation mot de passe</ion-label>
+            <ion-input class="form-control"
+              type="password"
+              [(ngModel)]="account.plainPasswordConfirm"
+              name="plainPasswordConfirm"
+            ></ion-input>
+            <ion-label
+              style="color:red;"
+              *ngIf="
+                account.plainPassword != account.plainPasswordConfirm &&
+                account.plainPassword
+              ">
+              Mot de passe incorrect.
+            </ion-label>
+          </ion-item>
+          <ion-item color="primary">
+            <ion-label stacked>Date Naissance</ion-label>
+            <ion-input class="form-control"
+              (tap)="showDatepicker()"
+              [(ngModel)]="account.tempDate"
+              name="tempDate"
+            ></ion-input>
+          </ion-item>
+          <ion-item color="primary">
+            <ion-label stacked>Téléphone</ion-label>
+            <ion-input class="form-control"
+              type="tel"
+              [(ngModel)]="account.telephone"
+              name="telephone"
+            ></ion-input>
+          </ion-item>
+          <ion-item color="primary">
+            <ion-label stacked>Adresse</ion-label>
+            <ion-textarea class="form-control"
+              [(ngModel)]="account.adresse"
+              name="adresse"
+            ></ion-textarea>
+          </ion-item>
+
+          <div padding>
+            <button ion-button color="primary" block class="signup-button">
+              {{ "SIGNUP_BUTTON" | translate }}
+            </button>
+          </div>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

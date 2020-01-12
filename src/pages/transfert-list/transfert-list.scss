@@ -1,0 +1,15 @@
+page-transfert-list {
+  .transfert-item {
+    border-radius: 12px;
+  }
+
+  .transfert-item-encours {
+    border-radius: 12px;
+    border: 2px solid red;
+  }
+
+  .transfert-item-recues {
+    border-radius: 12px;
+    border: 2px solid orange;
+  }
+}

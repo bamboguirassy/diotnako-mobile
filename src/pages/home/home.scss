@@ -1,0 +1,40 @@
+page-home {
+.solde {
+    border-radius: 5px;
+    border:2px solid  #008F5A;
+}
+
+.option-item {
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 2px solid #008F5A;
+}
+.option-item-1 {
+    background: #008F5A;
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 2px solid #008F5A;
+    height: 60px;
+}
+
+.icon-center{
+    vertical-align: middle;
+}
+
+.line-separator {
+    margin-top: 5px;
+    background-color: #008F5A;
+}
+
+.option-icon {
+    // border: 2px solid #008F5A;
+    border-radius: 10px;
+}
+.option-goto {
+    border: 2px solid #008F5A;
+    border-radius: 10px;
+}
+}

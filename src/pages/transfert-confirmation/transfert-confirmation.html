@@ -1,0 +1,41 @@
+<!--
+  Generated template for the TransfertConfirmationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary" text-center>
+    <ion-title>Confirmation Transfert</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="primary" class="myCard">
+    <ion-card-header text-center>
+      <ion-card-title>Code de confirmation</ion-card-title>
+      <h4 ion-card-subtitle>
+        Un code de confirmation vous a été <br>
+        envoyé. Merci de le saisir.</h4>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="confirmTransfert()">
+        <ion-list>
+          <ion-item color="primary">
+            <ion-label stacked>Code de confirmation</ion-label>
+            <ion-input class="form-control"
+              name="codeConfirmation"
+              type="number"
+              size="6" min="100000" max="999999"
+              [(ngModel)]="confirmation.codeConfirmation"></ion-input>
+          </ion-item>
+        </ion-list>
+        <button ion-button class="validation-button">
+          <ion-icon slot="end" name="add"></ion-icon>
+          &nbsp; valider
+        </button>
+        <br>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
